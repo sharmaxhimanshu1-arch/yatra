@@ -1,0 +1,37 @@
+export default {
+  id: 'dandaka',
+  name: 'The Dandaka Forest',
+  subtitle: 'Deep jungle, hidden ashrams, serpent palaces',
+  token: 'heartwood',
+  waypoints: [[70, 95], [260, 80], [430, 140], [360, 250], [180, 300], [110, 420], [250, 535], [460, 545], [600, 450], [560, 330], [640, 200], [760, 108], [880, 92], [930, 200], [905, 330], [820, 445], [890, 552]],
+  track: [
+    'start#edge:Edge of the Dandaka',
+    'encounter', 'event', 'hazard', 'event',
+    'village#agastya:Ashram of Agastya',
+    [['encounter', 'event', 'encounter'], ['shrine', 'mystery']],
+    'landmark#lotuspond:The Lotus Pond Palace',
+    'event', 'encounter', 'hazard', 'event',
+    [['encounter', 'event'], ['event', 'encounter']],
+    'village#gond:Village of Painted Walls',
+    'event', 'encounter', 'shrine', 'hazard', 'event',
+    [['event', 'landmark#salgrove:The Chained Sal Tree', 'encounter'], ['mystery', 'encounter', 'event']],
+    'encounter', 'event', 'hazard', 'encounter',
+    'gate#sandal:The Sandal King',
+  ],
+  nodes: {
+    edge: { card: 'dandaka_intro', text: 'Where the fields stop and the trees begin, all at once, like a wall.' },
+    agastya: {
+      text: 'The forest hermitage of the sage Agastya, who once drank an entire ocean.',
+      shop: ['herbs', 'milk', 'incense', 'manuscript', 'lamp', 'rope'],
+      visits: ['dandaka_letter'],
+    },
+    lotuspond: { card: 'dandaka_lotuspond', text: 'Beneath the lotuses lies the crystal palace of the naga queen.' },
+    gond: {
+      text: 'A Gond village whose every wall is painted with trees, tigers and the stories of the forest.',
+      shop: ['herbs', 'laddoo', 'staff', 'flute', 'sandals', 'incense'],
+      quests: ['q_yaksha'],
+    },
+    salgrove: { card: 'dandaka_salgrove', text: 'A sal tree bound with black chains, its leaves grey with sorrow.' },
+    sandal: { card: 'dandaka_gate', text: 'The oldest sandalwood tree in the world, said to be guarded by every snake in the forest.' },
+  },
+};

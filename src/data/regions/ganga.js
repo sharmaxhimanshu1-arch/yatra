@@ -1,0 +1,37 @@
+export default {
+  id: 'ganga',
+  name: 'The Ganga Plains',
+  subtitle: 'Home, fields and the great river',
+  token: 'lotus_seed',
+  waypoints: [[70, 560], [250, 555], [440, 520], [640, 555], [850, 540], [935, 450], [820, 370], [600, 350], [380, 385], [170, 360], [80, 265], [200, 165], [420, 125], [640, 150], [830, 115], [935, 80]],
+  track: [
+    'start#sonpur:Sonpur',
+    'event', 'encounter', 'event',
+    'village#ghat:Ghat of a Hundred Lamps',
+    [['encounter', 'event', 'shrine'], ['hazard', 'mystery']],
+    'landmark#banyan:The Thousand-Root Banyan',
+    'event', 'encounter', 'hazard', 'event', 'encounter',
+    'village#mela:The Mela Grounds',
+    'encounter', 'event', 'shrine', 'event',
+    [['event', 'encounter', 'hazard', 'event'], ['landmark#sangam:The Sangam', 'encounter', 'event']],
+    'mystery', 'encounter', 'event', 'hazard', 'event',
+    'gate#ferry:Kevat’s Ferry',
+  ],
+  nodes: {
+    sonpur: { card: 'ganga_intro', text: 'Your village of mud walls and mango trees, where nothing has happened for a hundred years.' },
+    ghat: {
+      text: 'Stone steps down to the river, where a hundred lamps float away every evening.',
+      shop: ['herbs', 'laddoo', 'milk', 'incense', 'lamp', 'staff'],
+      quests: ['q_calf'],
+    },
+    banyan: { card: 'ganga_banyan', text: 'A single tree that has become a forest. Its roots hang like the beards of old men.' },
+    mela: {
+      text: 'A fair of a thousand tents: snake-charmers, sweet-sellers, giant wheels and wrestlers.',
+      shop: ['herbs', 'rope', 'sandals', 'flute', 'incense', 'milk', 'manuscript'],
+      quests: ['q_letter'],
+      visits: ['ganga_calf_return'],
+    },
+    sangam: { card: 'ganga_sangam', text: 'Where three rivers meet, one of them invisible.' },
+    ferry: { card: 'ganga_gate', text: 'The last crossing before the forests of the south.' },
+  },
+};

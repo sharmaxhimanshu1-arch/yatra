@@ -1,0 +1,37 @@
+export default {
+  id: 'coast',
+  name: 'The Southern Coast',
+  subtitle: 'Temples, spice ports and the endless sea',
+  token: 'tide_conch',
+  waypoints: [[80, 80], [250, 105], [420, 80], [600, 115], [780, 90], [920, 170], [850, 280], [680, 250], [500, 280], [320, 250], [140, 300], [90, 410], [230, 470], [420, 445], [600, 490], [760, 545], [920, 505]],
+  track: [
+    'start#ghats:Down from the Ghats',
+    'event', 'encounter', 'event', 'hazard',
+    'village#kanyapuri:Kanyapuri',
+    [['encounter', 'event', 'shrine'], ['mystery', 'encounter']],
+    'landmark#shoretemple:The Shore Temple',
+    'event', 'encounter', 'hazard', 'event', 'encounter',
+    'village#spiceport:The Spice Port',
+    'encounter', 'event', 'hazard', 'event',
+    [['event', 'landmark#reef:Lighthouse Point', 'encounter'], ['mystery', 'event', 'encounter']],
+    'encounter', 'event', 'hazard', 'encounter',
+    'gate#tidegate:Varuna’s Tide Gate',
+  ],
+  nodes: {
+    ghats: { card: 'coast_intro', text: 'The cool green Western Ghats, falling away toward the sea.' },
+    kanyapuri: {
+      text: 'A fishing village of palm-thatched huts and boats painted with eyes, so they can see their way home.',
+      shop: ['oil', 'herbs', 'rope', 'laddoo', 'incense', 'lamp'],
+      quests: ['q_lighthouse'],
+      recruit: ['meen'],
+    },
+    shoretemple: { card: 'coast_shoretemple', text: 'A granite temple on the very edge of the sea, half-eaten by spray.' },
+    spiceport: {
+      text: 'Pepper, cardamom, cinnamon. Ships from Arabia, Rome and China. Every language in the world is spoken here.',
+      shop: ['oil', 'herbs', 'manuscript', 'flute', 'staff', 'sandals', 'shawl', 'milk'],
+      restCost: 3,
+    },
+    reef: { card: 'coast_reef', text: 'A rocky point with a dark lighthouse and the bones of wrecked boats.' },
+    tidegate: { card: 'coast_gate', text: 'At low tide, a stone gateway rises from the sea. At high tide, it vanishes.' },
+  },
+};

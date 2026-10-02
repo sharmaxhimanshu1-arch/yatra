@@ -1,0 +1,38 @@
+export default {
+  id: 'maru',
+  name: 'The Maru Desert',
+  subtitle: 'Dunes, caravans and sand-buried forts',
+  token: 'sun_shard',
+  waypoints: [[930, 90], [740, 80], [560, 130], [380, 90], [190, 120], [80, 220], [200, 310], [420, 290], [620, 320], [820, 290], [930, 385], [820, 480], [620, 540], [420, 500], [220, 550], [80, 500]],
+  track: [
+    'start#oasis:The Last Oasis',
+    'event', 'hazard', 'encounter', 'event',
+    'village#rohi:Rohi',
+    [['encounter', 'hazard', 'event'], ['mystery', 'event']],
+    'landmark#fort:The Sand-Buried Fort',
+    'event', 'encounter', 'hazard', 'event', 'encounter',
+    'village#caravan:The Caravanserai',
+    'encounter', 'event', 'shrine', 'hazard',
+    [['event', 'encounter', 'hazard', 'event'], ['landmark#golden:The Golden City', 'encounter', 'event']],
+    'mystery', 'encounter', 'event', 'hazard',
+    'gate#sunshrine:Temple of the Sun',
+  ],
+  nodes: {
+    oasis: { card: 'maru_intro', text: 'Date palms, a green pool, and beyond them nothing but sand to the edge of the world.' },
+    rohi: {
+      text: 'A ring of round mud houses painted with white patterns, around a well that is slowly dying.',
+      shop: ['waterskin', 'dates', 'herbs', 'incense', 'sandals'],
+      quests: ['q_well'],
+    },
+    fort: { card: 'maru_fort', text: 'Half a fort sticks out of a dune like the prow of a sinking ship.' },
+    caravan: {
+      text: 'A walled inn where camel caravans from five kingdoms rest, trade and argue all night.',
+      shop: ['waterskin', 'dates', 'herbs', 'rope', 'staff', 'manuscript', 'milk'],
+      recruit: ['kesar'],
+      visits: ['maru_well_report'],
+      restCost: 3,
+    },
+    golden: { card: 'maru_golden', text: 'A city of yellow sandstone that glows like gold at sunset.' },
+    sunshrine: { card: 'maru_gate', text: 'A temple to Surya, where the noon sun stands directly overhead.' },
+  },
+};

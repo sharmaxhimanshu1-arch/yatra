@@ -1,0 +1,37 @@
+export default {
+  id: 'himalaya',
+  name: 'The Himalaya',
+  subtitle: 'Snow passes, monasteries, the roof of the world',
+  token: 'snow_key',
+  waypoints: [[90, 560], [480, 562], [860, 560], [928, 478], [860, 398], [480, 398], [140, 398], [52, 318], [140, 238], [480, 238], [860, 238], [928, 160], [860, 82], [480, 82], [130, 82]],
+  track: [
+    'start#foothills:The Foothills',
+    'event', 'encounter', 'hazard', 'event',
+    'village#bazaar:Hill Bazaar',
+    [['encounter', 'hazard', 'event'], ['shrine', 'mystery']],
+    'landmark#manasa:Lake Manasa',
+    'event', 'encounter', 'hazard', 'event', 'encounter',
+    'village#tsering:Tsering Gompa',
+    'hazard', 'event', 'encounter', 'shrine',
+    [['event', 'landmark#cliff:Garuda’s Cliff', 'hazard'], ['encounter', 'mystery', 'event']],
+    'hazard', 'encounter', 'event', 'hazard',
+    'gate#snowgate:The Snow-Lotus Gate',
+  ],
+  nodes: {
+    foothills: { card: 'himalaya_intro', text: 'Pine forests and terraced fields, and above them, impossibly high, the snow.' },
+    bazaar: {
+      text: 'A ridge-top bazaar of wool, salt, tea and turquoise, where traders from Tibet meet traders from the plains.',
+      shop: ['shawl', 'herbs', 'incense', 'rope', 'staff', 'lamp', 'laddoo'],
+      quests: ['q_bell'],
+    },
+    manasa: { card: 'himalaya_manasa', text: 'A sacred lake so clear and blue it seems made of sky.' },
+    tsering: {
+      text: 'A red-and-white monastery clinging to a cliff, prayer flags snapping in the wind.',
+      shop: ['shawl', 'herbs', 'incense', 'manuscript', 'flute'],
+      visits: ['himalaya_bell_recast', 'himalaya_kesar'],
+      restCost: 1,
+    },
+    cliff: { card: 'himalaya_cliff', text: 'A sheer wall of rock above a mile of empty air.' },
+    snowgate: { card: 'himalaya_gate', text: 'A gate of ice in the highest pass, guarded by a turquoise-maned lion.' },
+  },
+};
